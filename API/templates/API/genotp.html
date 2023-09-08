@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/genotp.css' %}">
+    <title>Alpha Protocol</title>
+</head>
+<body>
+    <div class="main">
+        <div class="register">
+            <form id="register" method="POST" action="{% url 'genOtp' %}">
+                {% csrf_token %}
+                <label>Email</label>
+                <input type="text" name="mail" id="email" placeholder="Enter participant's email !!" onfocus="this.placeholder =''" onblur="this.placeholder='Enter participant\'s email !!'" required>
+                <br><br>
+                <label>Name</label>
+                <input type="text" name="username" id="name" placeholder="Enter participant's name !!" onfocus="this.placeholder =''" onblur="this.placeholder='Enter participant\'s name !!'" required>
+                <br><br>
+                <input type="submit" value="Submit" name="submit" id="submit">
+            </form>          
+        </div>
+    </div>
+</body>
+</html>
